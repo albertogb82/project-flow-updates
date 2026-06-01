@@ -863,18 +863,18 @@ ON CONFLICT ("id") DO UPDATE SET "project_id" = EXCLUDED."project_id", "name" = 
 
 -- 20. COLUMNAS DE TABLEROS
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
-VALUES ('col-1777885973964-0', 'board-1777885973981', 'Por Hacer', '["wfs-sim-todo","state-todo-1777886403524"]'::jsonb, 0)
+VALUES ('col-1777885973964-0', 'board-1777885973981', 'Por Hacer', ARRAY['wfs-sim-todo', 'state-todo-1777886403524'], 0)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
-VALUES ('col-1777885973964-1', 'board-1777885973981', 'Abierto', '["wfs-bug-open","wfs-bug-investigating"]'::jsonb, 1)
+VALUES ('col-1777885973964-1', 'board-1777885973981', 'Abierto', ARRAY['wfs-bug-open', 'wfs-bug-investigating'], 1)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
-VALUES ('col-1777885973964-5', 'board-1777885973981', 'In progress', '["wfs-bug-fixing","state-1777971417760"]'::jsonb, 2)
+VALUES ('col-1777885973964-5', 'board-1777885973981', 'In progress', ARRAY['wfs-bug-fixing', 'state-1777971417760'], 2)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
-VALUES ('col-1777885973964-6', 'board-1777885973981', 'En Pruebas', '["wfs-bug-inqa"]'::jsonb, 3)
+VALUES ('col-1777885973964-6', 'board-1777885973981', 'En Pruebas', ARRAY['wfs-bug-inqa'], 3)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
-VALUES ('col-1777885973964-7', 'board-1777885973981', 'Cerrado', '["wfs-bug-closed","state-done-1777886403524"]'::jsonb, 4)
+VALUES ('col-1777885973964-7', 'board-1777885973981', 'Cerrado', ARRAY['wfs-bug-closed', 'state-done-1777886403524'], 4)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
 
