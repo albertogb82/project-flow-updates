@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.2.4",
+  "latest_version": "1.2.5",
   "updates": [
+    {
+      "version": "1.2.5",
+      "date": "2026-06-01",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.2.5.sql",
+      "changelog": "Inicialización automática de proyectos base:\n- Creación por defecto del proyecto CRM con todas sus pantallas, flujos de trabajo y campos personalizados.\n- Creación de los proyectos ProjectFlow Core (PF) y Support (SUPP) listos para usar."
+    },
     {
       "version": "1.2.4",
       "date": "2026-06-01",
