@@ -1,0 +1,17 @@
+{
+  "latest_version": "1.2.4",
+  "updates": [
+    {
+      "version": "1.2.4",
+      "date": "2026-06-01",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.2.4.sql",
+      "changelog": "Nueva versión optimizada:\n- Distintivo visual 'NAS Edition' en panel de administración.\n- Autenticación automatizada de Watchtower integrada."
+    },
+    {
+      "version": "1.2.3",
+      "date": "2026-06-01",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.2.3.sql",
+      "changelog": "Versión inicial de despliegue."
+    }
+  ]
+}
