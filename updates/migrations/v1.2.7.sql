@@ -446,243 +446,243 @@ ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."scr
 -- 15. PESTAÑAS DE PANTALLAS (SCREEN TABS)
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-1776597062804-ectgm', 'screen-1776597053411', 'General', 0, '2026-04-19T11:11:02.804Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-1776597863111-mxgvc', 'screen-1776597528025', 'General', 0, '2026-04-19T11:24:23.117Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-1776597869252-rmr6v', 'screen-1776597528025', 'Otros Datos', 0, '2026-04-19T11:24:29.253Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-1776597942109-kp50z', 'screen-1776597053411', 'Otros Datos', 0, '2026-04-19T11:25:42.115Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-auto-1776599735697-xcqsz', 'screen-default', 'General', 0, '2026-04-19T11:55:35.698Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-crm-account-general', 'sc-crm-account', 'General', 0, '2026-05-27T11:45:14.339Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-crm-opp-general', 'sc-crm-opportunity', 'General', 0, '2026-05-27T11:45:14.339Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
 VALUES ('tab-crm-contact-general', 'sc-crm-contact', 'General', 0, '2026-05-28T10:20:13.511Z')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "tab_order" = EXCLUDED."tab_order", "created_at" = EXCLUDED."created_at";
 
 -- 16. CAMPOS DE PESTAÑAS DE PANTALLAS (SCREEN FIELDS)
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597872491-2brp5', NULL, 'title', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Título', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597874902-bc4bv', NULL, 'status', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597879113-m0he1', NULL, 'type', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Tipo de incidencia', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597908645-va0xj', NULL, 'title', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Título', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597910572-iqn34', NULL, 'status', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597912695-7ko7u', NULL, 'assignee', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597917116-q3731', NULL, 'labels', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Etiquetas', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597920407-m823q', NULL, 'cf_budget', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Presupuesto', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597976197-2ll2i', NULL, 'priority', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597973760-3orbj', NULL, 'description', 'editable', 0, 'tab-1776597062804-ectgm', TRUE, 'Descripción', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597922711-zigs5', NULL, 'cf_cliente', 'editable', 0, 'tab-1776597942109-kp50z', FALSE, 'Cliente', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776598169729-3aayi', NULL, 'description', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Descripción', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776598173400-juyh6', NULL, 'priority', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597914557-fqkky', NULL, 'reporter', 'readonly', 0, 'tab-1776597062804-ectgm', FALSE, 'Informador', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1777888469792-5rswn', NULL, 'storyPoints', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Story Points', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1777978484807-o8ml6', NULL, 'cf_et3wxt', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Criticidad', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1777978495211-3sust', NULL, 'cf_et3wxt', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Criticidad', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153226872-bxpfz', NULL, 'title', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Título', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153229047-y4ftk', NULL, 'description', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Descripción', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153230600-robb0', NULL, 'priority', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153232177-wi0r0', NULL, 'status', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153237127-ujdzs', NULL, 'assignee', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1778153239564-kuhk5', NULL, 'reporter', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Informador', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-1776597876938-j1oqn', NULL, 'assignee', 'editable', 0, 'tab-1776597869252-rmr6v', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-title', NULL, 'title', 'editable', 0, 'tab-crm-account-general', FALSE, 'Título', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-desc', NULL, 'description', 'editable', 1, 'tab-crm-account-general', FALSE, 'Descripción', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-status', NULL, 'status', 'editable', 2, 'tab-crm-account-general', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-priority', NULL, 'priority', 'editable', 3, 'tab-crm-account-general', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-assignee', NULL, 'assignee', 'editable', 4, 'tab-crm-account-general', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-reporter', NULL, 'reporter', 'editable', 5, 'tab-crm-account-general', FALSE, 'Informador', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-vat', NULL, 'cf_vat_cif', 'editable', 10, 'tab-crm-account-general', FALSE, 'VAT / CIF', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-person', NULL, 'cf_contact_person', 'editable', 11, 'tab-crm-account-general', FALSE, 'Contact Person', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-phone', NULL, 'cf_contact_phone', 'editable', 12, 'tab-crm-account-general', FALSE, 'Contact Phone', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-web', NULL, 'cf_website', 'editable', 13, 'tab-crm-account-general', FALSE, 'Website', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-ind', NULL, 'cf_industry', 'editable', 14, 'tab-crm-account-general', FALSE, 'Industry', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-size', NULL, 'cf_company_size', 'editable', 15, 'tab-crm-account-general', FALSE, 'Company Size', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-title', NULL, 'title', 'editable', 0, 'tab-crm-opp-general', FALSE, 'Título', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-desc', NULL, 'description', 'editable', 1, 'tab-crm-opp-general', FALSE, 'Descripción', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-status', NULL, 'status', 'editable', 2, 'tab-crm-opp-general', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-priority', NULL, 'priority', 'editable', 3, 'tab-crm-opp-general', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-assignee', NULL, 'assignee', 'editable', 4, 'tab-crm-opp-general', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-reporter', NULL, 'reporter', 'editable', 5, 'tab-crm-opp-general', FALSE, 'Informador', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-parent', NULL, 'parent', 'editable', 6, 'tab-crm-opp-general', FALSE, 'Parent/Cuenta', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-cf-amt', NULL, 'cf_original_amount', 'editable', 10, 'tab-crm-opp-general', FALSE, 'Original Amount', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-cf-curr', NULL, 'cf_opportunity_currency', 'editable', 11, 'tab-crm-opp-general', FALSE, 'Opportunity Currency', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-cf-base', NULL, 'cf_amount_in_base_currency', 'readonly', 12, 'tab-crm-opp-general', FALSE, 'Amount in Base Currency', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-cf-prob', NULL, 'cf_close_probability', 'editable', 13, 'tab-crm-opp-general', FALSE, 'Close Probability', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-opp-cf-date', NULL, 'cf_estimated_close_date', 'editable', 14, 'tab-crm-opp-general', FALSE, 'Estimated Close Date', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-email', NULL, 'cf_email', 'editable', 16, 'tab-crm-account-general', FALSE, 'Company Email', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-logo', NULL, 'cf_logo', 'editable', 17, 'tab-crm-account-general', FALSE, 'Company Logo', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-title', NULL, 'title', 'editable', 0, 'tab-crm-contact-general', FALSE, 'Nombre del Contacto', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-desc', NULL, 'description', 'editable', 1, 'tab-crm-contact-general', FALSE, 'Notas / Detalles', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-status', NULL, 'status', 'editable', 2, 'tab-crm-contact-general', FALSE, 'Estado', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-priority', NULL, 'priority', 'editable', 3, 'tab-crm-contact-general', FALSE, 'Prioridad', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-assignee', NULL, 'assignee', 'editable', 4, 'tab-crm-contact-general', FALSE, 'Responsable', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-reporter', NULL, 'reporter', 'editable', 5, 'tab-crm-contact-general', FALSE, 'Informador', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-parent', NULL, 'parent', 'editable', 6, 'tab-crm-contact-general', FALSE, 'Cuenta', 'system')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-email', NULL, 'cf_contact_email', 'editable', 10, 'tab-crm-contact-general', FALSE, 'Email del Contacto', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-phone', NULL, 'cf_contact_phone', 'editable', 11, 'tab-crm-contact-general', FALSE, 'Teléfono del Contacto', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-terms', NULL, 'cf_contact_accepted_terms', 'editable', 12, 'tab-crm-contact-general', FALSE, 'Acepta Términos', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-marketing', NULL, 'cf_contact_accepted_marketing', 'editable', 13, 'tab-crm-contact-general', FALSE, 'Acepta Comunicaciones', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-portal', NULL, 'cf_contact_create_portal_user', 'editable', 14, 'tab-crm-contact-general', FALSE, 'Crear Usuario Portal', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-address', NULL, 'cf_account_address', 'editable', 18, 'tab-crm-account-general', FALSE, 'Dirección de la Cuenta', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-acc-cf-country', NULL, 'cf_account_country', 'editable', 19, 'tab-crm-account-general', FALSE, 'País de la Cuenta', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-personal-email', NULL, 'cf_contact_personal_email', 'editable', 15, 'tab-crm-contact-general', FALSE, 'Email Personal', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-dept', NULL, 'cf_contact_department', 'editable', 16, 'tab-crm-contact-general', FALSE, 'Departamento', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-job-profile', NULL, 'cf_contact_job_profile', 'editable', 17, 'tab-crm-contact-general', FALSE, 'Perfil Profesional', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-job-title', NULL, 'cf_contact_job_title', 'editable', 18, 'tab-crm-contact-general', FALSE, 'Cargo', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-seniority', NULL, 'cf_contact_seniority', 'editable', 19, 'tab-crm-contact-general', FALSE, 'Seniority', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-address', NULL, 'cf_contact_address', 'editable', 20, 'tab-crm-contact-general', FALSE, 'Dirección', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
-INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
-VALUES ('sf-crm-con-cf-country', NULL, 'cf_contact_country', 'editable', 21, 'tab-crm-contact-general', FALSE, 'País', 'custom')
-ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597872491-2brp5', 'title', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Título', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597874902-bc4bv', 'status', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597879113-m0he1', 'type', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Tipo de incidencia', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597908645-va0xj', 'title', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Título', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597910572-iqn34', 'status', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597912695-7ko7u', 'assignee', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597917116-q3731', 'labels', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Etiquetas', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597920407-m823q', 'cf_budget', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Presupuesto', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597976197-2ll2i', 'priority', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597973760-3orbj', 'description', 'editable', 0, 'tab-1776597062804-ectgm', TRUE, 'Descripción', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597922711-zigs5', 'cf_cliente', 'editable', 0, 'tab-1776597942109-kp50z', FALSE, 'Cliente', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776598169729-3aayi', 'description', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Descripción', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776598173400-juyh6', 'priority', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597914557-fqkky', 'reporter', 'readonly', 0, 'tab-1776597062804-ectgm', FALSE, 'Informador', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1777888469792-5rswn', 'storyPoints', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Story Points', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1777978484807-o8ml6', 'cf_et3wxt', 'editable', 0, 'tab-1776597062804-ectgm', FALSE, 'Criticidad', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1777978495211-3sust', 'cf_et3wxt', 'editable', 0, 'tab-1776597863111-mxgvc', FALSE, 'Criticidad', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153226872-bxpfz', 'title', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Título', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153229047-y4ftk', 'description', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Descripción', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153230600-robb0', 'priority', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153232177-wi0r0', 'status', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153237127-ujdzs', 'assignee', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1778153239564-kuhk5', 'reporter', 'editable', 0, 'tab-auto-1776599735697-xcqsz', FALSE, 'Informador', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-1776597876938-j1oqn', 'assignee', 'editable', 0, 'tab-1776597869252-rmr6v', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-title', 'title', 'editable', 0, 'tab-crm-account-general', FALSE, 'Título', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-desc', 'description', 'editable', 1, 'tab-crm-account-general', FALSE, 'Descripción', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-status', 'status', 'editable', 2, 'tab-crm-account-general', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-priority', 'priority', 'editable', 3, 'tab-crm-account-general', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-assignee', 'assignee', 'editable', 4, 'tab-crm-account-general', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-reporter', 'reporter', 'editable', 5, 'tab-crm-account-general', FALSE, 'Informador', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-vat', 'cf_vat_cif', 'editable', 10, 'tab-crm-account-general', FALSE, 'VAT / CIF', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-person', 'cf_contact_person', 'editable', 11, 'tab-crm-account-general', FALSE, 'Contact Person', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-phone', 'cf_contact_phone', 'editable', 12, 'tab-crm-account-general', FALSE, 'Contact Phone', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-web', 'cf_website', 'editable', 13, 'tab-crm-account-general', FALSE, 'Website', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-ind', 'cf_industry', 'editable', 14, 'tab-crm-account-general', FALSE, 'Industry', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-size', 'cf_company_size', 'editable', 15, 'tab-crm-account-general', FALSE, 'Company Size', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-title', 'title', 'editable', 0, 'tab-crm-opp-general', FALSE, 'Título', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-desc', 'description', 'editable', 1, 'tab-crm-opp-general', FALSE, 'Descripción', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-status', 'status', 'editable', 2, 'tab-crm-opp-general', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-priority', 'priority', 'editable', 3, 'tab-crm-opp-general', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-assignee', 'assignee', 'editable', 4, 'tab-crm-opp-general', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-reporter', 'reporter', 'editable', 5, 'tab-crm-opp-general', FALSE, 'Informador', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-parent', 'parent', 'editable', 6, 'tab-crm-opp-general', FALSE, 'Parent/Cuenta', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-cf-amt', 'cf_original_amount', 'editable', 10, 'tab-crm-opp-general', FALSE, 'Original Amount', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-cf-curr', 'cf_opportunity_currency', 'editable', 11, 'tab-crm-opp-general', FALSE, 'Opportunity Currency', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-cf-base', 'cf_amount_in_base_currency', 'readonly', 12, 'tab-crm-opp-general', FALSE, 'Amount in Base Currency', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-cf-prob', 'cf_close_probability', 'editable', 13, 'tab-crm-opp-general', FALSE, 'Close Probability', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-opp-cf-date', 'cf_estimated_close_date', 'editable', 14, 'tab-crm-opp-general', FALSE, 'Estimated Close Date', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-email', 'cf_email', 'editable', 16, 'tab-crm-account-general', FALSE, 'Company Email', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-logo', 'cf_logo', 'editable', 17, 'tab-crm-account-general', FALSE, 'Company Logo', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-title', 'title', 'editable', 0, 'tab-crm-contact-general', FALSE, 'Nombre del Contacto', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-desc', 'description', 'editable', 1, 'tab-crm-contact-general', FALSE, 'Notas / Detalles', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-status', 'status', 'editable', 2, 'tab-crm-contact-general', FALSE, 'Estado', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-priority', 'priority', 'editable', 3, 'tab-crm-contact-general', FALSE, 'Prioridad', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-assignee', 'assignee', 'editable', 4, 'tab-crm-contact-general', FALSE, 'Responsable', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-reporter', 'reporter', 'editable', 5, 'tab-crm-contact-general', FALSE, 'Informador', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-parent', 'parent', 'editable', 6, 'tab-crm-contact-general', FALSE, 'Cuenta', 'system')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-email', 'cf_contact_email', 'editable', 10, 'tab-crm-contact-general', FALSE, 'Email del Contacto', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-phone', 'cf_contact_phone', 'editable', 11, 'tab-crm-contact-general', FALSE, 'Teléfono del Contacto', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-terms', 'cf_contact_accepted_terms', 'editable', 12, 'tab-crm-contact-general', FALSE, 'Acepta Términos', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-marketing', 'cf_contact_accepted_marketing', 'editable', 13, 'tab-crm-contact-general', FALSE, 'Acepta Comunicaciones', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-portal', 'cf_contact_create_portal_user', 'editable', 14, 'tab-crm-contact-general', FALSE, 'Crear Usuario Portal', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-address', 'cf_account_address', 'editable', 18, 'tab-crm-account-general', FALSE, 'Dirección de la Cuenta', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-acc-cf-country', 'cf_account_country', 'editable', 19, 'tab-crm-account-general', FALSE, 'País de la Cuenta', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-personal-email', 'cf_contact_personal_email', 'editable', 15, 'tab-crm-contact-general', FALSE, 'Email Personal', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-dept', 'cf_contact_department', 'editable', 16, 'tab-crm-contact-general', FALSE, 'Departamento', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-job-profile', 'cf_contact_job_profile', 'editable', 17, 'tab-crm-contact-general', FALSE, 'Perfil Profesional', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-job-title', 'cf_contact_job_title', 'editable', 18, 'tab-crm-contact-general', FALSE, 'Cargo', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-seniority', 'cf_contact_seniority', 'editable', 19, 'tab-crm-contact-general', FALSE, 'Seniority', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-address', 'cf_contact_address', 'editable', 20, 'tab-crm-contact-general', FALSE, 'Dirección', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
+INSERT INTO public.screen_fields ("id", "field_key", "field_mode", "field_order", "tab_id", "is_rich_text", "name", "type")
+VALUES ('sf-crm-con-cf-country', 'cf_contact_country', 'editable', 21, 'tab-crm-contact-general', FALSE, 'País', 'custom')
+ON CONFLICT ("id") DO UPDATE SET "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
 
 -- 18. DEFINICIONES DE CAMPOS PERSONALIZADOS
 INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
@@ -877,5 +877,6 @@ ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCL
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
 VALUES ('col-1777885973964-7', 'board-1777885973981', 'Cerrado', ARRAY['wfs-bug-closed', 'state-done-1777886403524'], 4)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
+
 
 
