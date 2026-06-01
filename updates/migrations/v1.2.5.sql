@@ -323,40 +323,40 @@ ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLU
 -- 11. ENTRADAS DE ESQUEMAS DE PANTALLA POR TIPO
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itss-e-default', 'itss-default', '_default', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itss-e-bug', 'itss-default', 'bug', 'ss-bug')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-1777975011789', 'itss-default', 'story', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-1777975019789', 'itss-default', 'riesgo', 'ss-bug')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-1777975027488', 'itss-default', 'task', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-1777975040951', 'itss-default', 'subtask', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-1777975048701', 'itss-default', 'epic', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-crm-acc', 'itss-crm', 'account', 'ss-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-crm-opp', 'itss-crm', 'opportunity', 'ss-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-crm-def-1', 'itss-crm', '_default', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-crm-def-2', 'itss-crm', 'default', 'ss-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_type_id", "screen_scheme_id")
 VALUES ('itse-crm-con-entry', 'itss-crm', 'contact', 'ss-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
+ON CONFLICT ("scheme_id", "issue_type_id") DO UPDATE SET "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 
 -- 14. PANTALLAS (SCREENS)
 INSERT INTO public.screens ("id", "name", "description", "type")
@@ -381,67 +381,67 @@ ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLU
 -- 13. ENTRADAS DE ESQUEMAS DE PANTALLAS
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-4', 'ss-default', 'view', 'screen-default')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-bug-1', 'ss-bug', 'default', 'screen-1776597528025')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-5', 'ss-bug', 'default', 'screen-1776597528025')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-6', 'ss-bug', 'create', 'screen-1776597528025')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-7', 'ss-bug', 'edit', 'screen-1776597053411')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-8', 'ss-bug', 'view', 'screen-1776597053411')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-1777974847255', 'ss-default', 'default', 'screen-1776597528025')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-3', 'ss-default', 'edit', 'screen-1776597053411')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-1777974871852', 'ss-default', 'create', 'screen-1776597528025')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-acc-def', 'ss-crm-account', 'default', 'sc-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-acc-cre', 'ss-crm-account', 'create', 'sc-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-acc-edi', 'ss-crm-account', 'edit', 'sc-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-acc-vie', 'ss-crm-account', 'view', 'sc-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-opp-def', 'ss-crm-opportunity', 'default', 'sc-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-opp-cre', 'ss-crm-opportunity', 'create', 'sc-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-opp-edi', 'ss-crm-opportunity', 'edit', 'sc-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-opp-vie', 'ss-crm-opportunity', 'view', 'sc-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-con-def', 'ss-crm-contact', 'default', 'sc-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-con-cre', 'ss-crm-contact', 'create', 'sc-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-con-edi', 'ss-crm-contact', 'edit', 'sc-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-con-vie', 'ss-crm-contact', 'view', 'sc-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
+ON CONFLICT ("scheme_id", "operation") DO UPDATE SET "screen_id" = EXCLUDED."screen_id";
 
 -- 15. PESTAÑAS DE PANTALLAS (SCREEN TABS)
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
