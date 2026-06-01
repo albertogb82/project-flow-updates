@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.2.7",
+  "latest_version": "1.2.8",
   "updates": [
+    {
+      "version": "1.2.8",
+      "date": "2026-06-01",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.2.8.sql",
+      "changelog": "Inicialización automática de proyectos base corregida y optimizada."
+    },
     {
       "version": "1.2.7",
       "date": "2026-06-01",
