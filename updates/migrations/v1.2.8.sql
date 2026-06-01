@@ -23,32 +23,6 @@ INSERT INTO public.issue_type_schemes ("id", "name", "description")
 VALUES ('its-crm', 'CRM Issue Type Scheme', 'Issue type scheme for CRM projects')
 ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
 
--- 3. ASOCIACIONES DE TIPOS DE INCIDENCIA EN ESQUEMAS
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-its-default-epic', 'its-default', 'epic')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-its-default-story', 'its-default', 'story')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-its-default-task', 'its-default', 'task')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-its-default-subtask', 'its-default', 'subtask')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-its-default-bug', 'its-default', 'bug')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-crm-acc', 'its-crm', 'account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-crm-opp', 'its-crm', 'opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
-VALUES ('itse-crm-con', 'its-crm', 'contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
-
 -- 4. TIPOS DE INCIDENCIA
 INSERT INTO public.issue_types ("id", "name", "description", "icon", "color", "is_subtask")
 VALUES ('bug', 'Bug', 'Fallo o error en el sistema.', 'Bug', '#e5493a', FALSE)
@@ -75,33 +49,31 @@ INSERT INTO public.issue_types ("id", "name", "description", "icon", "color", "i
 VALUES ('account', 'Account', 'CRM Account representing a client/company', 'FolderKanban', 'hsl(210, 100%, 50%)', FALSE)
 ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "icon" = EXCLUDED."icon", "color" = EXCLUDED."color", "is_subtask" = EXCLUDED."is_subtask";
 
--- 5. ESQUEMAS DE TRABAJO (WORKFLOW SCHEMES)
-INSERT INTO public.workflow_schemes ("id", "name", "description")
-VALUES ('ws-default', 'Default Software Workflow Scheme', 'Aplica el flujo simplificado por defecto, y seguimiento estricto para Bugs.')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-INSERT INTO public.workflow_schemes ("id", "name", "description")
-VALUES ('ws-crm', 'CRM Workflow Scheme', 'Workflow scheme for CRM projects')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-
--- 6. MAPEOS DE WORKFLOW A TIPOS DE INCIDENCIA
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-ws-default-_default', 'ws-default', '_default', 'wf-1777886403524')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-ws-default-bug', 'ws-default', 'bug', 'wf-bug')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-crm-acc', 'ws-crm', 'account', 'wf-crm-account')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-crm-opp', 'ws-crm', 'opportunity', 'wf-crm-opportunity')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-crm-con', 'ws-crm', 'contact', 'wf-crm-contact')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
-INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
-VALUES ('wsm-crm-def', 'ws-crm', '_default', 'wf-simplified')
-ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+-- 3. ASOCIACIONES DE TIPOS DE INCIDENCIA EN ESQUEMAS
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-its-default-epic', 'its-default', 'epic')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-its-default-story', 'its-default', 'story')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-its-default-task', 'its-default', 'task')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-its-default-subtask', 'its-default', 'subtask')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-its-default-bug', 'its-default', 'bug')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-crm-acc', 'its-crm', 'account')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-crm-opp', 'its-crm', 'opportunity')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
+INSERT INTO public.issue_type_scheme_entries ("id", "scheme_id", "issue_type_id")
+VALUES ('itse-crm-con', 'its-crm', 'contact')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id";
 
 -- 7. DEFINICIONES DE FLUJOS DE TRABAJO
 INSERT INTO public.workflow_definitions ("id", "name", "description", "status", "parent_definition_id", "initial_state_id")
@@ -295,12 +267,57 @@ INSERT INTO public.workflow_transitions ("id", "workflow_definition_id", "name",
 VALUES ('tr-con-inact-to-act', 'wf-crm-contact', 'Reactivate', 'wfs-crm-con-inactive', 'wfs-crm-con-active', '[{"id":"rule-con-react","order":1,"config":{},"enabled":true,"ruleName":"activate_portal_user","ruleType":"post_function","description":"Activa la cuenta del usuario del portal asociado a este contacto."}]'::jsonb)
 ON CONFLICT ("id") DO UPDATE SET "workflow_definition_id" = EXCLUDED."workflow_definition_id", "name" = EXCLUDED."name", "from_status_id" = EXCLUDED."from_status_id", "to_status_id" = EXCLUDED."to_status_id", "rules" = EXCLUDED."rules";
 
+-- 5. ESQUEMAS DE TRABAJO (WORKFLOW SCHEMES)
+INSERT INTO public.workflow_schemes ("id", "name", "description")
+VALUES ('ws-default', 'Default Software Workflow Scheme', 'Aplica el flujo simplificado por defecto, y seguimiento estricto para Bugs.')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+INSERT INTO public.workflow_schemes ("id", "name", "description")
+VALUES ('ws-crm', 'CRM Workflow Scheme', 'Workflow scheme for CRM projects')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+
+-- 6. MAPEOS DE WORKFLOW A TIPOS DE INCIDENCIA
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-ws-default-_default', 'ws-default', '_default', 'wf-1777886403524')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-ws-default-bug', 'ws-default', 'bug', 'wf-bug')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-crm-acc', 'ws-crm', 'account', 'wf-crm-account')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-crm-opp', 'ws-crm', 'opportunity', 'wf-crm-opportunity')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-crm-con', 'ws-crm', 'contact', 'wf-crm-contact')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+INSERT INTO public.workflow_scheme_mappings ("id", "scheme_id", "issue_type_id", "workflow_definition_id")
+VALUES ('wsm-crm-def', 'ws-crm', '_default', 'wf-simplified')
+ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "workflow_definition_id" = EXCLUDED."workflow_definition_id";
+
 -- 10. ESQUEMAS DE PANTALLA POR TIPO DE INCIDENCIA (ISSUE TYPE SCREEN SCHEMES)
 INSERT INTO public.issue_type_screen_schemes ("id", "name", "description")
 VALUES ('itss-default', 'Default Issue Mapping', 'Mapeo predeterminado de pantallas.')
 ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
 INSERT INTO public.issue_type_screen_schemes ("id", "name", "description")
 VALUES ('itss-crm', 'CRM Issue Type Screen Scheme', 'Asociación de pantallas para el proyecto CRM')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+
+-- 12. ESQUEMAS DE PANTALLAS (SCREEN SCHEMES)
+INSERT INTO public.screen_schemes ("id", "name", "description")
+VALUES ('ss-default', 'Default Screen Scheme', 'Aplica Default Screen a todas las operaciones.')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+INSERT INTO public.screen_schemes ("id", "name", "description")
+VALUES ('ss-bug', 'Bug Screen Scheme', 'Aplica Bug Screen a todas las operaciones.')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+INSERT INTO public.screen_schemes ("id", "name", "description")
+VALUES ('ss-crm-account', 'CRM Account Screen Scheme', 'Esquema de pantallas para Cuentas CRM')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+INSERT INTO public.screen_schemes ("id", "name", "description")
+VALUES ('ss-crm-opportunity', 'CRM Opportunity Screen Scheme', 'Esquema de pantallas para Oportunidades CRM')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+INSERT INTO public.screen_schemes ("id", "name", "description")
+VALUES ('ss-crm-contact', 'CRM Contact Screen Scheme', 'Esquema de pantallas para Contactos CRM')
 ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
 
 -- 11. ENTRADAS DE ESQUEMAS DE PANTALLA POR TIPO
@@ -341,22 +358,25 @@ INSERT INTO public.issue_type_screen_scheme_entries ("id", "scheme_id", "issue_t
 VALUES ('itse-crm-con-entry', 'itss-crm', 'contact', 'ss-crm-contact')
 ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "issue_type_id" = EXCLUDED."issue_type_id", "screen_scheme_id" = EXCLUDED."screen_scheme_id";
 
--- 12. ESQUEMAS DE PANTALLAS (SCREEN SCHEMES)
-INSERT INTO public.screen_schemes ("id", "name", "description")
-VALUES ('ss-default', 'Default Screen Scheme', 'Aplica Default Screen a todas las operaciones.')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-INSERT INTO public.screen_schemes ("id", "name", "description")
-VALUES ('ss-bug', 'Bug Screen Scheme', 'Aplica Bug Screen a todas las operaciones.')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-INSERT INTO public.screen_schemes ("id", "name", "description")
-VALUES ('ss-crm-account', 'CRM Account Screen Scheme', 'Esquema de pantallas para Cuentas CRM')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-INSERT INTO public.screen_schemes ("id", "name", "description")
-VALUES ('ss-crm-opportunity', 'CRM Opportunity Screen Scheme', 'Esquema de pantallas para Oportunidades CRM')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
-INSERT INTO public.screen_schemes ("id", "name", "description")
-VALUES ('ss-crm-contact', 'CRM Contact Screen Scheme', 'Esquema de pantallas para Contactos CRM')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description";
+-- 14. PANTALLAS (SCREENS)
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('screen-default', 'Pantalla Predeterminada', 'Pantalla genérica para incidencias.', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('screen-1776597053411', 'ver editar', '', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('screen-1776597528025', 'Pantalla de creacion', '', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('sc-crm-account', 'CRM Account Screen', 'Pantalla para incidencias de tipo Cuenta en CRM', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('sc-crm-opportunity', 'CRM Opportunity Screen', 'Pantalla para incidencias de tipo Oportunidad en CRM', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
+INSERT INTO public.screens ("id", "name", "description", "type")
+VALUES ('sc-crm-contact', 'CRM Contact Screen', 'Pantalla para incidencias de tipo Contacto en CRM', 'edit')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
 
 -- 13. ENTRADAS DE ESQUEMAS DE PANTALLAS
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
@@ -422,26 +442,6 @@ ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation"
 INSERT INTO public.screen_scheme_entries ("id", "scheme_id", "operation", "screen_id")
 VALUES ('sse-crm-con-vie', 'ss-crm-contact', 'view', 'sc-crm-contact')
 ON CONFLICT ("id") DO UPDATE SET "scheme_id" = EXCLUDED."scheme_id", "operation" = EXCLUDED."operation", "screen_id" = EXCLUDED."screen_id";
-
--- 14. PANTALLAS (SCREENS)
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('screen-default', 'Pantalla Predeterminada', 'Pantalla genérica para incidencias.', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('screen-1776597053411', 'ver editar', '', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('screen-1776597528025', 'Pantalla de creacion', '', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('sc-crm-account', 'CRM Account Screen', 'Pantalla para incidencias de tipo Cuenta en CRM', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('sc-crm-opportunity', 'CRM Opportunity Screen', 'Pantalla para incidencias de tipo Oportunidad en CRM', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
-INSERT INTO public.screens ("id", "name", "description", "type")
-VALUES ('sc-crm-contact', 'CRM Contact Screen', 'Pantalla para incidencias de tipo Contacto en CRM', 'edit')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "description" = EXCLUDED."description", "type" = EXCLUDED."type";
 
 -- 15. PESTAÑAS DE PANTALLAS (SCREEN TABS)
 INSERT INTO public.screen_tabs ("id", "screen_id", "name", "tab_order", "created_at")
@@ -684,6 +684,89 @@ INSERT INTO public.screen_fields ("id", "screen_id", "field_key", "field_mode", 
 VALUES ('sf-crm-con-cf-country', NULL, 'cf_contact_country', 'editable', 21, 'tab-crm-contact-general', FALSE, 'País', 'custom')
 ON CONFLICT ("id") DO UPDATE SET "screen_id" = EXCLUDED."screen_id", "field_key" = EXCLUDED."field_key", "field_mode" = EXCLUDED."field_mode", "field_order" = EXCLUDED."field_order", "tab_id" = EXCLUDED."tab_id", "is_rich_text" = EXCLUDED."is_rich_text", "name" = EXCLUDED."name", "type" = EXCLUDED."type";
 
+-- 18. DEFINICIONES DE CAMPOS PERSONALIZADOS
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_vat_cif', 'VAT / CIF', 'cf_vat_cif', 'text', 'Company Tax ID', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.676Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_person', 'Contact Person', 'cf_contact_person', 'text', 'Main Contact Name', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.678Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_phone', 'Contact Phone', 'cf_contact_phone', 'text', 'Contact Phone Number', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.679Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_website', 'Website', 'cf_website', 'url', 'Company Website URL', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.681Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_industry', 'Industry', 'cf_industry', 'select', 'Company Industry/Sector', '["Technology","Finance","Services","Health","Retail","Other"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.682Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_company_size', 'Company Size', 'cf_company_size', 'select', 'Total Employees', '["1-10","11-50","51-200","201+"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.683Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_original_amount', 'Original Amount', 'cf_original_amount', 'number', 'Deal original amount', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.684Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_opportunity_currency', 'Opportunity Currency', 'cf_opportunity_currency', 'select', 'Deal currency', '["EUR","USD","GBP","MXN","JPY"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.685Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_amount_in_base_currency', 'Amount in Base Currency', 'cf_amount_in_base_currency', 'number', 'Deal amount in corporate currency', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.686Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_close_probability', 'Close Probability', 'cf_close_probability', 'select', 'Winning probability', '["10%","30%","50%","75%","90%","100%"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.687Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_estimated_close_date', 'Estimated Close Date', 'cf_estimated_close_date', 'date', 'Expected closing date', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.688Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_email', 'Company Email', 'cf_email', 'text', 'Company Email Address', '[]'::jsonb, FALSE, FALSE, '2026-05-27T15:23:11.427Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_logo', 'Company Logo', 'cf_logo', 'url', 'Company Logo Image URL', '[]'::jsonb, FALSE, FALSE, '2026-05-27T15:23:11.429Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_email', 'Email del Contacto', 'cf_contact_email', 'text', 'Correo electrónico del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.490Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_accepted_terms', 'Acepta Términos', 'cf_contact_accepted_terms', 'checkbox', 'Acepta los términos y condiciones de la compañía', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.492Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_accepted_marketing', 'Acepta Comunicaciones', 'cf_contact_accepted_marketing', 'checkbox', 'Acepta envíos de comunicaciones comerciales', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.493Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_create_portal_user', 'Crear Usuario Portal', 'cf_contact_create_portal_user', 'checkbox', 'Indica si se debe dar de alta al contacto como usuario del portal', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.494Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_email_sent', 'Email Consentimiento Enviado', 'cf_contact_email_sent', 'checkbox', 'Indica si ya se envió el email de consentimiento', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.495Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_personal_email', 'Email Personal', 'cf_contact_personal_email', 'text', 'Correo electrónico personal del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.350Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_department', 'Departamento', 'cf_contact_department', 'text', 'Departamento del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.351Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_job_profile', 'Perfil Profesional', 'cf_contact_job_profile', 'select', 'Perfil profesional o rol del contacto', '["Agile Coach","Analista Big Data","Analista Funcional","Arquitecto Big Data","Arquitecto de datos","Arquitecto Java","Arquitecto Microservicios","Chief Scrum Master","Comercial","Data Governance","Data Quality","Data Science","DBA","Desarrollador Big Data","Desarrollador Java","Desarrollador Microservicios","Devops","Digital Market Consultant","Documentación","DPO","Financiero","Front End","Fullstack","Marketing/Comunicación","Office manager","People","Preventa","Product Owner","QA","Scrum Master","Service Delivery","sysDev","Technical Lead","Técnico de Seguridad","Técnico de Sistemas","Técnico de Soporte","Técnico informática interna","Técnico microinformática","UX"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.352Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_job_title', 'Cargo', 'cf_contact_job_title', 'text', 'Cargo o título profesional', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.353Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_seniority', 'Seniority', 'cf_contact_seniority', 'select', 'Nivel de seniority del contacto', '["Analyst","CEO/President/Owner","C-level","Consultant","Director-level","Individual contributor","Manager-level","Partner","VP-level","Other"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.354Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_address', 'Dirección del Contacto', 'cf_contact_address', 'text', 'Dirección física del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.355Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_account_address', 'Dirección de la Cuenta', 'cf_account_address', 'text', 'Dirección física de la cuenta', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.356Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_contact_country', 'País del Contacto', 'cf_contact_country', 'select', 'País de residencia del contacto', '["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria","Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice","Benín","Bielorrusia","Birmania","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi","Bután","Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Ciudad del Vaticano","Colombia","Comoras","Corea del Norte","Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos","Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia","Georgia","Ghana","Granada","Grecia","Guatemala","Guyana","Guinea","Guinea Ecuatorial","Guinea-Bisáu","Haití","Honduras","Hungría","India","Indonesia","Irak","Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait","Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Macedonia del Norte","Madagascar","Malasia","Malaui","Maldivas","Malí","Malta","Marruecos","Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria","Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana","República Checa","República del Congo","República Democrática del Congo","República Dominicana","Ruanda","Rumania","Rusia","Samoa","San Cristóbal y Nieves","San Marino","San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudáfrica","Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Taiwán","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda","Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.357Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
+VALUES ('cf_account_country', 'País de la Cuenta', 'cf_account_country', 'select', 'País de registro de la cuenta', '["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria","Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice","Benín","Bielorrusia","Birmania","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi","Bután","Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Ciudad del Vaticano","Colombia","Comoras","Corea del Norte","Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos","Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia","Georgia","Ghana","Granada","Grecia","Guatemala","Guyana","Guinea","Guinea Ecuatorial","Guinea-Bisáu","Haití","Honduras","Hungría","India","Indonesia","Irak","Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait","Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Macedonia del Norte","Madagascar","Malasia","Malaui","Maldivas","Malí","Malta","Marruecos","Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria","Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana","República Checa","República del Congo","República Democrática del Congo","República Dominicana","Ruanda","Rumania","Rusia","Samoa","San Cristóbal y Nieves","San Marino","San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudáfrica","Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Taiwán","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda","Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.360Z')
+ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
+
 -- 17. CONTEXTOS DE CAMPOS PERSONALIZADOS
 INSERT INTO public.custom_field_contexts ("id", "field_id", "project_id", "issue_type_id", "created_at")
 VALUES ('ctx-crm-cf_vat_cif-account', 'cf_vat_cif', 'proj-crm', 'account', '2026-05-26T15:01:24.689Z')
@@ -770,89 +853,6 @@ INSERT INTO public.custom_field_contexts ("id", "field_id", "project_id", "issue
 VALUES ('ctx-crm-cf_account_country-account', 'cf_account_country', 'proj-crm', 'account', '2026-05-28T11:02:02.378Z')
 ON CONFLICT ("id") DO UPDATE SET "field_id" = EXCLUDED."field_id", "project_id" = EXCLUDED."project_id", "issue_type_id" = EXCLUDED."issue_type_id", "created_at" = EXCLUDED."created_at";
 
--- 18. DEFINICIONES DE CAMPOS PERSONALIZADOS
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_vat_cif', 'VAT / CIF', 'cf_vat_cif', 'text', 'Company Tax ID', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.676Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_person', 'Contact Person', 'cf_contact_person', 'text', 'Main Contact Name', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.678Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_phone', 'Contact Phone', 'cf_contact_phone', 'text', 'Contact Phone Number', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.679Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_website', 'Website', 'cf_website', 'url', 'Company Website URL', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.681Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_industry', 'Industry', 'cf_industry', 'select', 'Company Industry/Sector', '["Technology","Finance","Services","Health","Retail","Other"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.682Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_company_size', 'Company Size', 'cf_company_size', 'select', 'Total Employees', '["1-10","11-50","51-200","201+"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.683Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_original_amount', 'Original Amount', 'cf_original_amount', 'number', 'Deal original amount', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.684Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_opportunity_currency', 'Opportunity Currency', 'cf_opportunity_currency', 'select', 'Deal currency', '["EUR","USD","GBP","MXN","JPY"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.685Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_amount_in_base_currency', 'Amount in Base Currency', 'cf_amount_in_base_currency', 'number', 'Deal amount in corporate currency', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.686Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_close_probability', 'Close Probability', 'cf_close_probability', 'select', 'Winning probability', '["10%","30%","50%","75%","90%","100%"]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.687Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_estimated_close_date', 'Estimated Close Date', 'cf_estimated_close_date', 'date', 'Expected closing date', '[]'::jsonb, FALSE, FALSE, '2026-05-26T15:01:24.688Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_email', 'Company Email', 'cf_email', 'text', 'Company Email Address', '[]'::jsonb, FALSE, FALSE, '2026-05-27T15:23:11.427Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_logo', 'Company Logo', 'cf_logo', 'url', 'Company Logo Image URL', '[]'::jsonb, FALSE, FALSE, '2026-05-27T15:23:11.429Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_email', 'Email del Contacto', 'cf_contact_email', 'text', 'Correo electrónico del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.490Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_accepted_terms', 'Acepta Términos', 'cf_contact_accepted_terms', 'checkbox', 'Acepta los términos y condiciones de la compañía', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.492Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_accepted_marketing', 'Acepta Comunicaciones', 'cf_contact_accepted_marketing', 'checkbox', 'Acepta envíos de comunicaciones comerciales', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.493Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_create_portal_user', 'Crear Usuario Portal', 'cf_contact_create_portal_user', 'checkbox', 'Indica si se debe dar de alta al contacto como usuario del portal', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.494Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_email_sent', 'Email Consentimiento Enviado', 'cf_contact_email_sent', 'checkbox', 'Indica si ya se envió el email de consentimiento', '[]'::jsonb, FALSE, FALSE, '2026-05-28T10:20:13.495Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_personal_email', 'Email Personal', 'cf_contact_personal_email', 'text', 'Correo electrónico personal del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.350Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_department', 'Departamento', 'cf_contact_department', 'text', 'Departamento del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.351Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_job_profile', 'Perfil Profesional', 'cf_contact_job_profile', 'select', 'Perfil profesional o rol del contacto', '["Agile Coach","Analista Big Data","Analista Funcional","Arquitecto Big Data","Arquitecto de datos","Arquitecto Java","Arquitecto Microservicios","Chief Scrum Master","Comercial","Data Governance","Data Quality","Data Science","DBA","Desarrollador Big Data","Desarrollador Java","Desarrollador Microservicios","Devops","Digital Market Consultant","Documentación","DPO","Financiero","Front End","Fullstack","Marketing/Comunicación","Office manager","People","Preventa","Product Owner","QA","Scrum Master","Service Delivery","sysDev","Technical Lead","Técnico de Seguridad","Técnico de Sistemas","Técnico de Soporte","Técnico informática interna","Técnico microinformática","UX"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.352Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_job_title', 'Cargo', 'cf_contact_job_title', 'text', 'Cargo o título profesional', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.353Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_seniority', 'Seniority', 'cf_contact_seniority', 'select', 'Nivel de seniority del contacto', '["Analyst","CEO/President/Owner","C-level","Consultant","Director-level","Individual contributor","Manager-level","Partner","VP-level","Other"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.354Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_address', 'Dirección del Contacto', 'cf_contact_address', 'text', 'Dirección física del contacto', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.355Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_account_address', 'Dirección de la Cuenta', 'cf_account_address', 'text', 'Dirección física de la cuenta', '[]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.356Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_contact_country', 'País del Contacto', 'cf_contact_country', 'select', 'País de residencia del contacto', '["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria","Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice","Benín","Bielorrusia","Birmania","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi","Bután","Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Ciudad del Vaticano","Colombia","Comoras","Corea del Norte","Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos","Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia","Georgia","Ghana","Granada","Grecia","Guatemala","Guyana","Guinea","Guinea Ecuatorial","Guinea-Bisáu","Haití","Honduras","Hungría","India","Indonesia","Irak","Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait","Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Macedonia del Norte","Madagascar","Malasia","Malaui","Maldivas","Malí","Malta","Marruecos","Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria","Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana","República Checa","República del Congo","República Democrática del Congo","República Dominicana","Ruanda","Rumania","Rusia","Samoa","San Cristóbal y Nieves","San Marino","San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudáfrica","Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Taiwán","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda","Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.357Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-INSERT INTO public.custom_fields ("id", "name", "field_key", "field_type", "description", "options", "is_required", "is_system", "created_at")
-VALUES ('cf_account_country', 'País de la Cuenta', 'cf_account_country', 'select', 'País de registro de la cuenta', '["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria","Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice","Benín","Bielorrusia","Birmania","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi","Bután","Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Ciudad del Vaticano","Colombia","Comoras","Corea del Norte","Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos","Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia","Georgia","Ghana","Granada","Grecia","Guatemala","Guyana","Guinea","Guinea Ecuatorial","Guinea-Bisáu","Haití","Honduras","Hungría","India","Indonesia","Irak","Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait","Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Macedonia del Norte","Madagascar","Malasia","Malaui","Maldivas","Malí","Malta","Marruecos","Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria","Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana","República Checa","República del Congo","República Democrática del Congo","República Dominicana","Ruanda","Rumania","Rusia","Samoa","San Cristóbal y Nieves","San Marino","San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudáfrica","Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Taiwán","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda","Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"]'::jsonb, FALSE, FALSE, '2026-05-28T11:02:02.360Z')
-ON CONFLICT ("id") DO UPDATE SET "name" = EXCLUDED."name", "field_key" = EXCLUDED."field_key", "field_type" = EXCLUDED."field_type", "description" = EXCLUDED."description", "options" = EXCLUDED."options", "is_required" = EXCLUDED."is_required", "is_system" = EXCLUDED."is_system", "created_at" = EXCLUDED."created_at";
-
 -- 19. TABLEROS (BOARDS)
 INSERT INTO public.boards ("id", "project_id", "name", "board_type", "pjql_filter", "created_at", "card_fields")
 VALUES ('board-1777885973981', 'p-pf', 'PF_Scrum', 'scrum', 'project = "ProjectFlow Core"', '2026-05-04T09:12:53.996Z', '{}'::jsonb)
@@ -877,4 +877,5 @@ ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCL
 INSERT INTO public.board_columns ("id", "board_id", "name", "status_ids", "order_index")
 VALUES ('col-1777885973964-7', 'board-1777885973981', 'Cerrado', ARRAY['wfs-bug-closed', 'state-done-1777886403524'], 4)
 ON CONFLICT ("id") DO UPDATE SET "board_id" = EXCLUDED."board_id", "name" = EXCLUDED."name", "status_ids" = EXCLUDED."status_ids", "order_index" = EXCLUDED."order_index";
+
 
