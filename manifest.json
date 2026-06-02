@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.2.9",
+  "latest_version": "1.3.0",
   "updates": [
+    {
+      "version": "1.3.0",
+      "date": "2026-06-02",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.0.sql",
+      "changelog": "Mejoras en el embudo (Funnel) CRM:\n- Visualización gráfica del embudo de ventas CRM con filtros configurables.\n- Filtrado interactivo por fecha (año en curso) y campos personalizados.\n- Sumatorios económicos en cada etapa del embudo.\n- Filtro por responsable ('Mis tareas' y selector de usuario asignado) sincronizado.\n- Gadget 'Funnel CRM' para añadir al Dashboard del proyecto.\n- Autocompletado de descripción, dirección y país al enriquecer cuentas CRM."
+    },
     {
       "version": "1.2.9",
       "date": "2026-06-01",
