@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.9",
+  "latest_version": "1.3.10",
   "updates": [
+    {
+      "version": "1.3.10",
+      "date": "2026-06-07",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.10.sql",
+      "changelog": "Mejoras de CRM y Modo Streamer: Roles de contacto en oportunidades, suscripciones a filtros guardados con scheduler automático, modo streamer y enmascaramiento, y mejoras en el embudo de conversión."
+    },
     {
       "version": "1.3.9",
       "date": "2026-06-05",
