@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.18",
+  "latest_version": "1.3.19",
   "updates": [
+    {
+      "version": "1.3.19",
+      "date": "2026-06-11",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.19.sql",
+      "changelog": "Garantiza columna screen_id en workflow_transitions"
+    },
     {
       "version": "1.3.18",
       "date": "2026-06-11",
