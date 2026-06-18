@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.30",
+  "latest_version": "1.3.31",
   "updates": [
+    {
+      "version": "1.3.31",
+      "date": "2026-06-18",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.31.sql",
+      "changelog": "Corrección en build de backend: Inclusión de módulo sla-service en repositorio Git"
+    },
     {
       "version": "1.3.30",
       "date": "2026-06-18",
