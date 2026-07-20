@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.49",
+  "latest_version": "1.3.50",
   "updates": [
+    {
+      "version": "1.3.50",
+      "date": "2026-07-20",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.50.sql",
+      "changelog": "Soporte para descuentos aplicados a licencias sincronizados desde la central HQ"
+    },
     {
       "version": "1.3.49",
       "date": "2026-07-16",
