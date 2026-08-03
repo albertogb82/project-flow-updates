@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.56",
+  "latest_version": "1.3.57",
   "updates": [
+    {
+      "version": "1.3.57",
+      "date": "2026-08-03",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.57.sql",
+      "changelog": "Ocultar y suprimir de forma absoluta los IDs de usuario u- no resueltos en RITA"
+    },
     {
       "version": "1.3.56",
       "date": "2026-08-03",
