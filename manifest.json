@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.59",
+  "latest_version": "1.3.60",
   "updates": [
+    {
+      "version": "1.3.60",
+      "date": "2026-08-04",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.60.sql",
+      "changelog": "Conector oficial Atlassian Rovo AI & Jira, acciones de escritura seguras y fijación de versión 1.3.60."
+    },
     {
       "version": "1.3.59",
       "date": "2026-08-03",
