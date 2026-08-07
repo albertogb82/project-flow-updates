@@ -1,6 +1,12 @@
 {
-  "latest_version": "1.3.67",
+  "latest_version": "1.3.68",
   "updates": [
+    {
+      "version": "1.3.68",
+      "date": "2026-08-07",
+      "sql_url": "https://raw.githubusercontent.com/albertogb82/project-flow-updates/main/updates/migrations/v1.3.68.sql",
+      "changelog": "Optimización de carga F5, corrección de bucles infinitos en tableros, normalización diacrítica en búsquedas PJQL y actualización completa de la documentación interna."
+    },
     {
       "version": "1.3.67",
       "date": "2026-08-06",
